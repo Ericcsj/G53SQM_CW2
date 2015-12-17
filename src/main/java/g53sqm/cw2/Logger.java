@@ -1,6 +1,5 @@
 package g53sqm.cw2;
 
-
 /**
  * A logging class which prefixes messages to the standard output with
  * human readable timestamps.
