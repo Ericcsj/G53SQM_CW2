@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="SQM">
+
+<target name="clean">
+	<delete dir = "build"/>
+	<mkdir dir = "build"/> 
+</target>
+
+<target name="compile" depends="clean">
+	<mkdir dir="build/classes"/>
+	<javac srcdir="src" destdir="build/classes" includeantruntime="false"/>
+</target>
+
+<target name="jar" depends = "compile">
+	
+	<jar destfile="jibble.jar" basedir="build/classes">
+		<manifest>
+			<attribute name="Main-Class" value="WebServerMain"/>
+		</manifest>
+	</jar>
+</target>
+
+<target name = "run" depends = "jar">
+	<java jar = "jibble.jar" fork="true"/>
+</target>
+
+</project>
